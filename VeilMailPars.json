@@ -1,0 +1,96 @@
+{
+  "component": "VeilMail",
+  "description": "Parameter definitions for the VeilMail TouchDesigner component. Create a Base COMP, add a custom parameter page named 'VeilMail', and create these parameters.",
+  "page": "VeilMail",
+  "parameters": [
+    {
+      "name": "Apikey",
+      "label": "API Key",
+      "type": "Str",
+      "default": "",
+      "help": "Your Veil Mail API key (veil_live_xxx or veil_test_xxx)"
+    },
+    {
+      "name": "Baseurl",
+      "label": "Base URL",
+      "type": "Str",
+      "default": "https://api.veilmail.xyz",
+      "help": "API base URL"
+    },
+    {
+      "name": "From",
+      "label": "From",
+      "type": "Str",
+      "default": "",
+      "help": "Sender email address"
+    },
+    {
+      "name": "To",
+      "label": "To",
+      "type": "Str",
+      "default": "",
+      "help": "Recipient email address"
+    },
+    {
+      "name": "Subject",
+      "label": "Subject",
+      "type": "Str",
+      "default": "",
+      "help": "Email subject line"
+    },
+    {
+      "name": "Body",
+      "label": "Body",
+      "type": "Str",
+      "default": "",
+      "help": "Email HTML body content"
+    },
+    {
+      "name": "Templateid",
+      "label": "Template ID",
+      "type": "Str",
+      "default": "",
+      "help": "Optional template ID (overrides Body)"
+    },
+    {
+      "name": "Send",
+      "label": "Send Email",
+      "type": "Pulse",
+      "help": "Trigger email send"
+    },
+    {
+      "name": "Testconnection",
+      "label": "Test Connection",
+      "type": "Pulse",
+      "help": "Test the API connection"
+    },
+    {
+      "name": "Refresh",
+      "label": "Refresh Client",
+      "type": "Pulse",
+      "help": "Re-initialize the client"
+    },
+    {
+      "name": "Status",
+      "label": "Status",
+      "type": "Str",
+      "default": "Not initialized",
+      "readOnly": true,
+      "help": "Last operation status"
+    }
+  ],
+  "extension": {
+    "file": "VeilMailExt.py",
+    "class": "VeilMailExt",
+    "promote": true
+  },
+  "setup_instructions": [
+    "1. Create a Base COMP and name it 'veilmail'",
+    "2. Add a custom parameter page named 'VeilMail'",
+    "3. Create each parameter from the list above with the specified types",
+    "4. In the COMP's Extensions parameter, add VeilMailExt.py",
+    "5. Set the Extension Object to 'VeilMailExt'",
+    "6. Place veilmail_td.py and VeilMailExt.py in your project folder or TD's Python path",
+    "7. Optionally wire VeilMailCallbacks.py to a DAT Execute for button handling"
+  ]
+}
