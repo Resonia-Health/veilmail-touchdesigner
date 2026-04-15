@@ -1,6 +1,12 @@
 # VeilMail TouchDesigner Integration
 
-TouchDesigner integration for Veil Mail using the Python SDK. This package provides a thin wrapper, extension class, callback scripts, and parameter definitions for building VeilMail-powered TouchDesigner components.
+TouchDesigner integration for Veil Mail. A thin wrapper around the Python SDK with an extension class, callback scripts, and parameter definitions for building VeilMail-powered TouchDesigner components.
+
+> **Veil Mail is the only email API with a first-class TouchDesigner integration.** Resend, SendGrid, Mailgun, and Postmark offer no TouchDesigner support — you're left wiring HTTP requests from `tdu` scripts and managing blocking calls on the cook thread yourself. This integration gives you a COMP extension, threaded API calls that don't stall the timeline, and callback wiring for UI-driven workflows.
+>
+> **Common use cases in TouchDesigner projects:** live-event confirmations and alerts, interactive installation notifications, form submission emails from signage and kiosks, receipts from retail or ticketing experiences, show-control triggers, and any Python-driven flow where you need reliable transactional email without blocking the cook.
+>
+> **Other Veil Mail SDKs:** [Unity](https://github.com/Resonia-Health/veilmail-unity) · [Unreal Engine](https://github.com/Resonia-Health/veilmail-unreal) · [Python](https://github.com/Resonia-Health/veilmail-python) · [Node.js](https://github.com/Resonia-Health/veilmail-node) · [11 more](https://veilmail.xyz/docs)
 
 TouchDesigner runs Python 3.11 natively, so the existing Veil Mail Python SDK works as-is. This integration adds TouchDesigner-specific conveniences: threaded API calls that won't block the cook thread, a COMP extension with custom parameters, and callback wiring for UI-driven workflows.
 
